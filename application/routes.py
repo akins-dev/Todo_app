@@ -64,12 +64,12 @@ def update_todo_page(_id):
                 form.completed.data = todo_item.get("completed", None)
                 return render_template("update_todo.html", form=form)
 
-        flash(f"Todo item with id \"{_id}\" not found", "info")
+        flash("Todo item not found", "warning")
         return redirect(url_for("home_page"))
 
 
 @app.route("/delete/<_id>", methods=["POST", "GET"])
 def delete_todo_page(_id):
     todo.find_one_and_delete({"_id": ObjectId(_id)})
-    flash(f"Todo item with id \"{_id}\" deleted successfully", "success")
+    flash("Todo item deleted successfully", "success")
     return redirect(url_for("home_page"))
