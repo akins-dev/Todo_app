@@ -67,3 +67,9 @@ def update_todo_page(_id):
         flash(f"Todo item with id \"{_id}\" not found", "info")
         return redirect(url_for("home_page"))
 
+
+@app.route("/delete/<_id>", methods=["POST", "GET"])
+def delete_todo_page(_id):
+    todo.find_one_and_delete({"_id": ObjectId(_id)})
+    flash(f"Todo item with id \"{_id}\" deleted successfully", "success")
+    return redirect(url_for("home_page"))
