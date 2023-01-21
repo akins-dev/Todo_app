@@ -29,7 +29,7 @@ def add_todo_page():
             "date_created": datetime.utcnow()
         })
 
-        flash("Todo added successfully!", "success")
+        flash("Todo added successfully hehe!", "success")
         return redirect(url_for("home_page"))
     else:
         form = TodoForm()
