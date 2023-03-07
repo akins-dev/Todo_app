@@ -4,3 +4,6 @@
 
 
 >MONGO_URL = ""
+
+#### You can also host it on [vercel](https://vercel.com/)
+
